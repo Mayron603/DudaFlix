@@ -70,7 +70,7 @@ function Login() {
           <span>A Branca mais</span><span className="block">Amada do Janga</span>
         </h2>
         <p className="text-base md:text-xl text-gray-100 mb-8 drop-shadow-md font-medium max-w-2xl leading-relaxed">
-          Uma professora livre liderando um bando de andorinhas que querem ir além, seja em suas salas de aula, carreiras ou na vida.
+          Um especial que celebra a história, o carinho e o legado da Branca no Janga, reunindo memórias e homenagens em uma homenagem inesquecível.
         </p>
         <div className="flex items-center gap-4">
           <Link to="/dashboard">
