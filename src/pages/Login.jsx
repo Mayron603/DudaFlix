@@ -38,20 +38,20 @@ const moviesData = {
 // --- CONFIGURAÇÃO DO "ABRA QUANDO..." ---
 // Aqui você define qual imagem aparece e qual filme abre ao clicar
 const openWhenList = [
-  { title: "Quando estiver triste", image: imgTriste, movieToOpen: 'harry' },
-  { title: "Quando precisar rir", image: imgRir, movieToOpen: 'scooby' },
-  { title: "Quando sentir saudade", image: imgSaudade, movieToOpen: 'barbie' },
-  { title: "Quando quiser cantar", image: imgCantar, movieToOpen: 'rebelde' },
+  { title: "", image: imgTriste, movieToOpen: 'harry' },
+  { title: "", image: imgRir, movieToOpen: 'scooby' },
+  { title: "", image: imgSaudade, movieToOpen: 'barbie' },
+  { title: "", image: imgCantar, movieToOpen: 'rebelde' },
   
-  { title: "Quando estiver feliz", image: imgFeliz, movieToOpen: 'barbie' },
-  { title: "Quando estiver com medo", image: imgMedo, movieToOpen: 'scooby' },
-  { title: "Quando precisar de inspiração", image: imgInspiracao, movieToOpen: 'harry' },
-  { title: "Quando quiser dançar", image: imgDancar, movieToOpen: 'rebelde' },
+  { title: "", image: imgFeliz, movieToOpen: 'barbie' },
+  { title: "", image: imgMedo, movieToOpen: 'scooby' },
+  { title: "", image: imgInspiracao, movieToOpen: 'harry' },
+  { title: "", image: imgDancar, movieToOpen: 'rebelde' },
   
-  { title: "Quando for seu aniversário", image: imgNiver, movieToOpen: 'barbie' },
-  { title: "Quando estiver entediado", image: imgTedio, movieToOpen: 'scooby' },
-  { title: "Quando conquistar algo", image: imgConquista, movieToOpen: 'harry' },
-  { title: "Quando quiser lembrar de nós", image: imgLembrar, movieToOpen: 'rebelde' },
+  { title: "", image: imgNiver, movieToOpen: 'barbie' },
+  { title: "", image: imgTedio, movieToOpen: 'scooby' },
+  { title: "", image: imgConquista, movieToOpen: 'harry' },
+  { title: "", image: imgLembrar, movieToOpen: 'rebelde' },
 ];
 
 function Login() {
