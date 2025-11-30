@@ -149,27 +149,22 @@ function Login() {
           <h3 className="text-2xl font-bold mb-6 text-white drop-shadow-lg pl-3 border-l-4 border-purple-500">Coisas que me lembram você</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             
-            {/* REMOVIDO: onClick, cursor-pointer e hover effects */}
             <div className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden transition-all duration-300">
               <img src={img18} alt="Especial 1" className="w-full h-full object-cover object-top opacity-85" />
             </div>
             
-            {/* REMOVIDO: onClick, cursor-pointer e hover effects */}
             <div className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden transition-all duration-300">
               <img src={img19} alt="Especial 2" className="w-full h-full object-cover object-top opacity-85" />
             </div>
             
-            {/* REMOVIDO: onClick, cursor-pointer e hover effects */}
             <div className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden transition-all duration-300">
               <img src={img20} alt="Especial 3" className="w-full h-full object-cover object-top opacity-85" />
             </div>
             
-            {/* REMOVIDO: onClick, cursor-pointer e hover effects */}
             <div className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden transition-all duration-300">
               <img src={img21} alt="Especial 4" className="w-full h-full object-cover object-top opacity-85" />
             </div>
 
-            {/* REMOVIDO: onClick, cursor-pointer e hover effects */}
             <div className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden transition-all duration-300">
               <img src={img22} alt="Especial 5" className="w-full h-full object-cover object-top opacity-85" />
             </div>
@@ -178,16 +173,21 @@ function Login() {
         </div>
         {/* --- FIM DA NOVA SEÇÃO --- */}
 
-        {/* SEÇÃO 2: ABRA QUANDO... (CLICÁVEL NOVAMENTE) */}
+        {/* SEÇÃO 2: ABRA QUANDO... (CORRIGIDO PARA MOSTRAR A IMAGEM DO CARD NO MODAL) */}
         <div>
           <h3 className="text-2xl font-bold mb-6 text-white drop-shadow-lg pl-3 border-l-4 border-blue-500">Abra quando...</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {openWhenList.map((item, index) => (
               <div 
                 key={index}
-                // RE-ADICIONADO: onClick para abrir o Modal
-                onClick={() => setSelectedMovie(moviesData[item.movieToOpen] || moviesData.harry)} 
-                // RE-ADICIONADO: cursor-pointer e hover effects
+                // Lógica corrigida: Pega todas as propriedades do filme vinculado, mas sobrescreve a imagem com a imagem do card de emoção.
+                onClick={() => {
+                    const baseMovieData = moviesData[item.movieToOpen] || moviesData.harry;
+                    setSelectedMovie({
+                        ...baseMovieData,
+                        image: item.image, // ISSO GARANTE QUE A IMAGEM DO MODAL É A IMAGEM CLICADA
+                    });
+                }} 
                 className="group relative w-full aspect-[433/243] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-blue-500"
               >
                 <img src={item.image} alt={item.title} className="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity" />
