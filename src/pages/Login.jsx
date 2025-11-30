@@ -173,20 +173,20 @@ function Login() {
         </div>
         {/* --- FIM DA NOVA SEÇÃO --- */}
 
-        {/* SEÇÃO 2: ABRA QUANDO... */}
+        {/* SEÇÃO 2: ABRA QUANDO... (Sem modal ao clicar) */}
         <div>
           <h3 className="text-2xl font-bold mb-6 text-white drop-shadow-lg pl-3 border-l-4 border-blue-500">Abra quando...</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {openWhenList.map((item, index) => (
               <div 
                 key={index}
-                onClick={() => setSelectedMovie(moviesData[item.movieToOpen] || moviesData.harry)} 
-                className="group relative w-full aspect-[433/243] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-blue-500"
+                // REMOVIDO: onClick={...} para não abrir o modal
+                className="group relative w-full aspect-[433/243] bg-[#1f1f1f] rounded-lg overflow-hidden transition-all duration-300" // Removido cursor-pointer e hover effects
               >
-                <img src={item.image} alt={item.title} className="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity" />
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover opacity-85" />
                 
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all flex items-center justify-center">
-                   <span className="text-white font-bold text-lg text-center px-4 drop-shadow-lg uppercase tracking-wide opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-transform">
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                   <span className="text-white font-bold text-lg text-center px-4 drop-shadow-lg uppercase tracking-wide opacity-90">
                      {item.title}
                    </span>
                 </div>
@@ -195,6 +195,11 @@ function Login() {
           </div>
         </div>
 
+      </div>
+
+      {/* --- RODAPÉ --- */}
+      <div className="w-full py-8 text-center text-gray-500 text-sm border-t border-gray-800 mt-12 z-10">
+        Criado por Mayron ❤️
       </div>
     </div>
   );
