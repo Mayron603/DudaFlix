@@ -95,7 +95,7 @@ function Login() {
         </div>
         <h2 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-2xl leading-tight text-white">A Branca mais Amada do Janga</h2>
         <p className="text-base md:text-xl text-gray-100 mb-8 drop-shadow-md font-medium max-w-2xl leading-relaxed">
-          Uma professora livre liderando um bando de andorinhas que querem ir além.
+          Um especial que celebra a história, o carinho e o legado da Branca no Janga, reunindo memórias e homenagens em uma homenagem inesquecível.
         </p>
         <div className="flex items-center gap-4">
           <Link to="/dashboard">
