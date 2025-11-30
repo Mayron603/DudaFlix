@@ -102,12 +102,24 @@ function Login() {
         <p className="text-base md:text-xl text-gray-100 mb-8 drop-shadow-md font-medium max-w-2xl leading-relaxed">
           Um especial que celebra a história, o carinho e o legado da Branca no Janga, reunindo memórias e homenagens em uma homenagem inesquecível.
         </p>
+        
+        {/* --- BOTÃO ASSISTIR COM LINK EXTERNO --- */}
         <div className="flex items-center gap-4">
-          <Link to="/dashboard">
-            <button className="flex items-center gap-3 px-8 py-3 bg-white text-black rounded-[4px] hover:bg-white/90 transition-all font-bold text-xl shadow-xl hover:scale-105"><Play className="w-7 h-7 fill-black" /> Assistir</button>
-          </Link>
-          <button className="flex items-center gap-3 px-8 py-3 bg-[rgba(109,109,110,0.7)] text-white rounded-[4px] hover:bg-[rgba(109,109,110,0.5)] transition-all font-bold text-xl backdrop-blur-sm"><Info className="w-7 h-7" /> Mais Informações</button>
+          <a 
+            href="https://youtube.com/playlist?list=PLFqgrexH4yV2Gl5tMeOe1KGs7CeNFRXLI&si=exiirWaAjZLUNtyf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <button className="flex items-center gap-3 px-8 py-3 bg-white text-black rounded-[4px] hover:bg-white/90 transition-all font-bold text-xl shadow-xl hover:scale-105">
+              <Play className="w-7 h-7 fill-black" /> Assistir
+            </button>
+          </a>
+          
+          <button className="flex items-center gap-3 px-8 py-3 bg-[rgba(109,109,110,0.7)] text-white rounded-[4px] hover:bg-[rgba(109,109,110,0.5)] transition-all font-bold text-xl backdrop-blur-sm">
+            <Info className="w-7 h-7" /> Mais Informações
+          </button>
         </div>
+
       </div>
 
       {/* --- LISTAS DE CARDS --- */}
@@ -135,31 +147,24 @@ function Login() {
         {/* --- NOVA SEÇÃO (ESPECIAL - FORMATO POSTER) --- */}
         <div>
           <h3 className="text-2xl font-bold mb-6 text-white drop-shadow-lg pl-3 border-l-4 border-purple-500">Coisas que me lembram você</h3>
-          {/* Mudei o grid para 5 colunas e o aspecto para 3/4 (formato retrato/poster) */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             
-            {/* Card 18 */}
             <div onClick={() => setSelectedMovie(moviesData.barbie)} className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-purple-500">
-              {/* Adicionei 'object-top' para focar no rosto e não cortar a cabeça */}
               <img src={img18} alt="Especial 1" className="w-full h-full object-cover object-top opacity-85 group-hover:opacity-100 transition-opacity" />
             </div>
             
-            {/* Card 19 */}
             <div onClick={() => setSelectedMovie(moviesData.scooby)} className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-purple-500">
               <img src={img19} alt="Especial 2" className="w-full h-full object-cover object-top opacity-85 group-hover:opacity-100 transition-opacity" />
             </div>
             
-            {/* Card 20 */}
             <div onClick={() => setSelectedMovie(moviesData.harry)} className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-purple-500">
               <img src={img20} alt="Especial 3" className="w-full h-full object-cover object-top opacity-85 group-hover:opacity-100 transition-opacity" />
             </div>
             
-            {/* Card 21 */}
             <div onClick={() => setSelectedMovie(moviesData.rebelde)} className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-purple-500">
               <img src={img21} alt="Especial 4" className="w-full h-full object-cover object-top opacity-85 group-hover:opacity-100 transition-opacity" />
             </div>
 
-            {/* Card 22 */}
             <div onClick={() => setSelectedMovie(moviesData.rebelde)} className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-purple-500">
               <img src={img22} alt="Especial 5" className="w-full h-full object-cover object-top opacity-85 group-hover:opacity-100 transition-opacity" />
             </div>
