@@ -125,7 +125,7 @@ function Login() {
       {/* --- LISTAS DE CARDS --- */}
       <div className="relative z-20 px-4 md:px-12 pb-20 bg-gradient-to-t from-[#141414] via-[#141414] to-transparent pt-10 space-y-16">
         
-        {/* SEÇÃO 1: VEM AÍ... */}
+        {/* SEÇÃO 1: VEM AÍ... (CLICÁVEL) */}
         <div>
           <h3 className="text-2xl font-bold mb-6 text-white drop-shadow-lg pl-3 border-l-4 border-red-600">Vem aí...</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -144,49 +144,56 @@ function Login() {
           </div>
         </div>
 
-        {/* --- NOVA SEÇÃO (ESPECIAL - FORMATO POSTER) --- */}
+        {/* --- NOVA SEÇÃO (COISAS QUE ME LEMBRAM VOCÊ - NÃO-CLICÁVEL) --- */}
         <div>
           <h3 className="text-2xl font-bold mb-6 text-white drop-shadow-lg pl-3 border-l-4 border-purple-500">Coisas que me lembram você</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             
-            <div onClick={() => setSelectedMovie(moviesData.barbie)} className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-purple-500">
-              <img src={img18} alt="Especial 1" className="w-full h-full object-cover object-top opacity-85 group-hover:opacity-100 transition-opacity" />
+            {/* REMOVIDO: onClick, cursor-pointer e hover effects */}
+            <div className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden transition-all duration-300">
+              <img src={img18} alt="Especial 1" className="w-full h-full object-cover object-top opacity-85" />
             </div>
             
-            <div onClick={() => setSelectedMovie(moviesData.scooby)} className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-purple-500">
-              <img src={img19} alt="Especial 2" className="w-full h-full object-cover object-top opacity-85 group-hover:opacity-100 transition-opacity" />
+            {/* REMOVIDO: onClick, cursor-pointer e hover effects */}
+            <div className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden transition-all duration-300">
+              <img src={img19} alt="Especial 2" className="w-full h-full object-cover object-top opacity-85" />
             </div>
             
-            <div onClick={() => setSelectedMovie(moviesData.harry)} className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-purple-500">
-              <img src={img20} alt="Especial 3" className="w-full h-full object-cover object-top opacity-85 group-hover:opacity-100 transition-opacity" />
+            {/* REMOVIDO: onClick, cursor-pointer e hover effects */}
+            <div className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden transition-all duration-300">
+              <img src={img20} alt="Especial 3" className="w-full h-full object-cover object-top opacity-85" />
             </div>
             
-            <div onClick={() => setSelectedMovie(moviesData.rebelde)} className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-purple-500">
-              <img src={img21} alt="Especial 4" className="w-full h-full object-cover object-top opacity-85 group-hover:opacity-100 transition-opacity" />
+            {/* REMOVIDO: onClick, cursor-pointer e hover effects */}
+            <div className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden transition-all duration-300">
+              <img src={img21} alt="Especial 4" className="w-full h-full object-cover object-top opacity-85" />
             </div>
 
-            <div onClick={() => setSelectedMovie(moviesData.rebelde)} className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-purple-500">
-              <img src={img22} alt="Especial 5" className="w-full h-full object-cover object-top opacity-85 group-hover:opacity-100 transition-opacity" />
+            {/* REMOVIDO: onClick, cursor-pointer e hover effects */}
+            <div className="group relative w-full aspect-[3/4] bg-[#1f1f1f] rounded-lg overflow-hidden transition-all duration-300">
+              <img src={img22} alt="Especial 5" className="w-full h-full object-cover object-top opacity-85" />
             </div>
 
           </div>
         </div>
         {/* --- FIM DA NOVA SEÇÃO --- */}
 
-        {/* SEÇÃO 2: ABRA QUANDO... (Sem modal ao clicar) */}
+        {/* SEÇÃO 2: ABRA QUANDO... (CLICÁVEL NOVAMENTE) */}
         <div>
           <h3 className="text-2xl font-bold mb-6 text-white drop-shadow-lg pl-3 border-l-4 border-blue-500">Abra quando...</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {openWhenList.map((item, index) => (
               <div 
                 key={index}
-                // REMOVIDO: onClick={...} para não abrir o modal
-                className="group relative w-full aspect-[433/243] bg-[#1f1f1f] rounded-lg overflow-hidden transition-all duration-300" // Removido cursor-pointer e hover effects
+                // RE-ADICIONADO: onClick para abrir o Modal
+                onClick={() => setSelectedMovie(moviesData[item.movieToOpen] || moviesData.harry)} 
+                // RE-ADICIONADO: cursor-pointer e hover effects
+                className="group relative w-full aspect-[433/243] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-blue-500"
               >
-                <img src={item.image} alt={item.title} className="w-full h-full object-cover opacity-85" />
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity" />
                 
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                   <span className="text-white font-bold text-lg text-center px-4 drop-shadow-lg uppercase tracking-wide opacity-90">
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all flex items-center justify-center">
+                   <span className="text-white font-bold text-lg text-center px-4 drop-shadow-lg uppercase tracking-wide opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-transform">
                      {item.title}
                    </span>
                 </div>
