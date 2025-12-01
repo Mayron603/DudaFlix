@@ -1,12 +1,13 @@
+// src/pages/Home.jsx
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Play } from 'lucide-react';
 
-// Ajustei os caminhos para ../assets pois agora estamos dentro da pasta pages
 import bgBolas from '../assets/bolas.png';
 import imgLinhas from '../assets/linhas.png';
 import imgTexto from '../assets/texto.png';
-import imgVaca from '../assets/vaca.png'; // ou .jpg se for o caso
+import imgVaca from '../assets/vaca.png';
 
 function Home() {
   return (
@@ -21,8 +22,11 @@ function Home() {
 
       <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
         
-        {/* VACA (Mantendo suas configurações de tamanho) */}
-        <div className="absolute left-[-500px] bottom-[250px] z-20 w-[80vw] md:w-[1500px]">
+        {/* --- ALTERAÇÃO AQUI NA VACA --- */}
+        {/* Antes: left-[-20%] bottom-[10%] (Ficava no meio)
+            Agora: -left-[45%] -bottom-[5%] (Empurra para o canto esquerdo e para baixo)
+        */}
+        <div className="absolute -left-[39%] -bottom-[-70%] md:left-[-500px] md:bottom-[250px] z-20 w-[110vw] md:w-[1500px]">
           <img 
             src={imgVaca} 
             alt="Vaca com balões" 
@@ -41,20 +45,21 @@ function Home() {
         </div>
 
         {/* TEXTO E BOTÃO */}
-        <div className="relative z-30 flex flex-col items-center mt-32 md:mt-44">
+        {/* Adicionei 'mb-10' para garantir que o botão suba um pouquinho caso a tela seja muito pequena */}
+        <div className="relative z-30 flex flex-col items-center mt-10 mb-10 md:mt-44 md:mb-0">
           <img 
             src={imgTexto} 
             alt="Um Álbum Quase Perfeito" 
-            className="w-[95vw] md:w-[1000px] h-auto object-contain drop-shadow-xl"
+            className="w-[85vw] md:w-[1000px] h-auto object-contain drop-shadow-xl"
           />
 
           <Link to="/login" className="mt-8 md:mt-12">
-            <button className="group relative inline-flex items-center justify-center px-12 py-4 md:px-16 md:py-5 bg-[#8B80F9] border-[3px] border-black rounded-full shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:shadow-none transition-all cursor-pointer">
-              <span className="font-headline text-white text-2xl md:text-4xl tracking-wide mr-3"
-                style={{ WebkitTextStroke: '1.5px black', fontFamily: '"Titan One", cursive' }}>
+            <button className="group relative inline-flex items-center justify-center px-10 py-3 md:px-16 md:py-5 bg-[#8B80F9] border-[3px] border-black rounded-full shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:shadow-none transition-all cursor-pointer">
+              <span className="font-headline text-white text-xl md:text-4xl tracking-wide mr-3"
+                style={{ WebkitTextStroke: '1px black', fontFamily: '"Titan One", cursive' }}>
                 COMEÇAR
               </span>
-              <Play className="w-8 h-8 md:w-10 md:h-10 fill-white text-white stroke-black stroke-[3px]" />
+              <Play className="w-6 h-6 md:w-10 md:h-10 fill-white text-white stroke-black stroke-[3px]" />
             </button>
           </Link>
         </div>
