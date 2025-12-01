@@ -158,7 +158,7 @@ const openWhenList = [
     title: "estiver tendo um DIA RUIM", 
     image: imgTedio, 
     movieToOpen: 'scooby', 
-    customDescription: "" 
+    customDescription: "Oi bicha feia, o que aconteceu? Tente pensar nas coisas boas, respire fundo e saiba que vai passar. Se for por causa de alguém, não deixe a pessoa ter a capicidade de mudar seu dia, não der esse poder tão grande na mão de alguém e segure ele com você. Cada dia é tão valioso, não perca parte dele irritada ou desistindo. Se reinvente e mude a calçada ruim ou apenas descansse que amanhã é outro dia, e tudo vai melhorar." 
   },
   { 
     title: "estiver no ANO NOVO", 
