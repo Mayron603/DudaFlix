@@ -91,25 +91,37 @@ export default function MovieModal({ isOpen, onClose, movie }) {
         {/* --- LISTA DE EPISÓDIOS / CENAS --- */}
         <div className="px-10 py-6 border-t border-gray-700">
           
-          {/* Lógica condicional: Se tiver scenesImages (Harry Potter), mostra o carrossel de fotos; senão, mostra a simulação original. */}
           {hasCustomScenes ? (
             <>
               <h3 className="text-xl font-bold text-white mb-4">Cenas Especiais</h3>
-              <div className="flex gap-4 overflow-x-auto pb-2">
+              {/* NOVO LAYOUT: Lista vertical uma abaixo da outra */}
+              <div className="space-y-4"> 
                 {movie.scenesImages.map((sceneImg, index) => (
-                  <div key={index} className="flex-shrink-0 w-60 h-36 bg-[#2f2f2f] rounded-md overflow-hidden shadow-lg">
-                    <img 
-                      src={sceneImg} 
-                      alt={`${movie.title} Cena ${index + 1}`} 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                    <div key={index} className="flex bg-[#2f2f2f] rounded-md overflow-hidden shadow-lg hover:bg-[#3f3f3f] transition cursor-pointer">
+                        {/* Imagem com Play button */}
+                        <div className="relative w-48 h-24 flex-shrink-0">
+                            <img 
+                                src={sceneImg} 
+                                alt={`${movie.title} Cena ${index + 1}`} 
+                                className="w-full h-full object-cover" 
+                            />
+                            <Play className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 text-white opacity-90 border-2 border-white rounded-full p-1" />
+                        </div>
+                        {/* Descrição da Cena */}
+                        <div className="p-3 flex flex-col justify-center">
+                            <h4 className="text-white font-bold text-sm">Cena {index + 1}</h4>
+                            <p className="text-gray-400 text-xs line-clamp-2">
+                                {/* Usando a descrição principal do filme como placeholder para a cena */}
+                                {movie.description.substring(0, 100)}...
+                            </p>
+                        </div>
+                    </div>
                 ))}
               </div>
             </>
           ) : (
             <>
-              {/* Simulando Episódios/Sugestões (Conteúdo original) */}
+              {/* Simulando Episódios/Sugestões (Conteúdo original para outros filmes) */}
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-bold text-white">Episódios</h3>
                 <span className="text-sm text-gray-400">Temporada 1</span>
@@ -119,7 +131,6 @@ export default function MovieModal({ isOpen, onClose, movie }) {
                 {[1, 2, 3, 4, 5, 6].map((item) => (
                   <div key={item} className="bg-[#2f2f2f] rounded-md overflow-hidden group cursor-pointer hover:bg-[#3f3f3f] transition">
                     <div className="relative h-28 overflow-hidden">
-                      {/* Usamos a mesma imagem com zoom para simular frames diferentes */}
                       <img src={movie.image} className="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" />
                       <div className="absolute bottom-2 left-2 text-white font-bold drop-shadow-md">Episódio {item}</div>
                       <Play className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity border-2 border-white rounded-full p-1" />
