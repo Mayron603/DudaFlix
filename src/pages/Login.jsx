@@ -76,7 +76,6 @@ const moviesData = {
     cast: "Ana Grimm, Maria Eduarda, Nayara Anjos e Thomaz Vinicius", 
     genre: "3 mulheres e 1 homem afeminado",
     scenesImages: [img23, img24, img25, img26, img27, img28],
-    // SUBTÍTULO ATUALIZADO
     subtitle: "3 mulheres e 1 homem afeminado", 
   },
   scooby: { 
@@ -87,7 +86,6 @@ const moviesData = {
     cast: "Ana, Caio, Charles e Rurylumanael", 
     genre: "Comédia",
     scenesImages: [img29, img30, img31, img32, img33, img34],
-    // SUBTÍTULO PADRÃO
     subtitle: "Dificuldades e Superação",
   },
   barbie: { 
@@ -98,7 +96,6 @@ const moviesData = {
     cast: "Maria Eduarda e Nayara Anjos", 
     genre: "Comédia",
     scenesImages: [img35, img36, img37, img38, img39, img40],
-    // SUBTÍTULO PADRÃO
     subtitle: "Dificuldades e Superação",
   },
   rebelde: { 
@@ -109,27 +106,27 @@ const moviesData = {
     cast: "Ana Grim, Maria Eduarda e Nayara Anjos", 
     genre: "Aventura", 
     scenesImages: [img41, img42, img43, img44, img45, img46],
-    // SUBTÍTULO PADRÃO
     subtitle: "Dificuldades e Superação",
   }
 };
 
 // --- CONFIGURAÇÃO DO "ABRA QUANDO..." ---
+// TÍTULOS ATUALIZADOS CONFORME A IMAGEM
 const openWhenList = [
-  { title: "", image: imgTriste, movieToOpen: 'harry' },
-  { title: "", image: imgRir, movieToOpen: 'scooby' },
-  { title: "", image: imgSaudade, movieToOpen: 'barbie' },
-  { title: "", image: imgCantar, movieToOpen: 'rebelde' }, 
+  { title: "precisar de uma AMIGA", image: imgTriste, movieToOpen: 'harry' },
+  { title: "precisar de um alguém PARA OUVIR", image: imgRir, movieToOpen: 'scooby' },
+  { title: "precisar de MOTIVAÇÃO", image: imgSaudade, movieToOpen: 'barbie' },
+  { title: "tirar uma nota RUIM", image: imgCantar, movieToOpen: 'rebelde' },
   
-  { title: "", image: imgFeliz, movieToOpen: 'barbie' },
-  { title: "", image: imgMedo, movieToOpen: 'scooby' },
-  { title: "", image: imgInspiracao, movieToOpen: 'harry' },
-  { title: "", image: imgDancar, movieToOpen: 'rebelde' },
+  { title: "precisar de um ABRAÇO", image: imgFeliz, movieToOpen: 'barbie' },
+  { title: "se FORMAR", image: imgMedo, movieToOpen: 'scooby' },
+  { title: "duvidar de si MESMA", image: imgInspiracao, movieToOpen: 'harry' },
+  { title: "tiver com vontade DE CHORAR", image: imgDancar, movieToOpen: 'rebelde' },
   
-  { title: "", image: imgNiver, movieToOpen: 'barbie' },
-  { title: "", image: imgTedio, movieToOpen: 'scooby' },
-  { title: "", image: imgConquista, movieToOpen: 'harry' },
-  { title: "", image: imgLembrar, movieToOpen: 'rebelde' },
+  { title: "estiver DOENTE", image: imgNiver, movieToOpen: 'barbie' },
+  { title: "estiver tendo um DIA RUIM", image: imgTedio, movieToOpen: 'scooby' },
+  { title: "estiver no ANO NOVO", image: imgConquista, movieToOpen: 'harry' },
+  { title: "for NATAL", image: imgLembrar, movieToOpen: 'rebelde' },
 ];
 
 function Login() {
@@ -246,7 +243,7 @@ function Login() {
         </div>
         {/* --- FIM DA NOVA SEÇÃO --- */}
 
-        {/* SEÇÃO 2: ABRA QUANDO... (CLICÁVEL NOVAMENTE) */}
+        {/* SEÇÃO 2: ABRA QUANDO... (CLICÁVEL, TÍTULOS CORRIGIDOS) */}
         <div>
           <h3 className="text-2xl font-bold mb-6 text-white drop-shadow-lg pl-3 border-l-4 border-blue-500">Abra quando...</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -257,7 +254,7 @@ function Login() {
                     const baseMovieData = moviesData[item.movieToOpen] || moviesData.harry;
                     setSelectedMovie({
                         ...baseMovieData,
-                        image: item.image, // ISSO GARANTE QUE A IMAGEM DO MODAL É A IMAGEM CLICADA
+                        image: item.image, // Garante que a imagem do modal é a imagem clicada
                     });
                 }} 
                 className="group relative w-full aspect-[433/243] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-blue-500"
@@ -266,7 +263,7 @@ function Login() {
                 
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all flex items-center justify-center">
                    <span className="text-white font-bold text-lg text-center px-4 drop-shadow-lg uppercase tracking-wide opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-transform">
-                     {item.title}
+                     {item.title} {/* AGORA MOSTRA O TÍTULO DA EMOÇÃO */}
                    </span>
                 </div>
               </div>
