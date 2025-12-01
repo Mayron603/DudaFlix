@@ -100,18 +100,78 @@ const moviesData = {
 };
 
 const openWhenList = [
-  { title: "precisar de uma AMIGA", image: imgTriste, movieToOpen: 'harry', customDescription: "" },
-  { title: "precisar de um alguém PARA OUVIR", image: imgRir, movieToOpen: 'scooby', customDescription: "Pare de ler imediatamente e me ligue caso eu esteja de plantão (se eu já tiver me formado até lá). Pode discar no número da Ana ou do Thomaz. Não surte sozinha — estamos aqui também para te ajudar nos momentos de crise. Você não precisa falar o que está passando. Entre no Discord e eu prometo que arrumo alguém para encher o seu saco e te divertir. (Se o Mayron ainda tiver paciência comigo, eu coloco ele na call e jogamos GTA — se ele não me matar toda hora.)" },
-  { title: "precisar de MOTIVAÇÃO", image: imgSaudade, movieToOpen: 'barbie', customDescription: "" },
-  { title: "tirar uma nota RUIM", image: imgCantar, movieToOpen: 'rebelde', customDescription: "" },
-  { title: "precisar de um ABRAÇO", image: imgFeliz, movieToOpen: 'barbie', customDescription: "Não sei o que está acontecendo. Eu não sou de abraços (como sabemos), mas, se for preciso, estarei aqui para isso. Respire um pouco, pense que tudo passa — tanto as coisas boas quanto as ruins. Então lembre dos momentos bons para que os ruins sejam esquecidos. E, caso precise se distrair, vai lá e coloca bem alto na caixa o Now United, porque quero ouvir daqui o OH NANANA, que já sabemos de cor e salteado. Lembre-se, Branquela: hoje você nunca estará sozinha (não no sentido macabro, mas no da amizade mesmo KKKK)" },
-  { title: "se FORMAR", image: imgMedo, movieToOpen: 'scooby', customDescription: "" },
-  { title: "duvidar de si MESMA", image: imgInspiracao, movieToOpen: 'harry', customDescription: "" },
-  { title: "tiver com vontade DE CHORAR", image: imgDancar, movieToOpen: 'rebelde', customDescription: "" },
-  { title: "estiver DOENTE", image: imgNiver, movieToOpen: 'barbie', customDescription: "" },
-  { title: "estiver tendo um DIA RUIM", image: imgTedio, movieToOpen: 'scooby', customDescription: "" },
-  { title: "estiver no ANO NOVO", image: imgConquista, movieToOpen: 'harry', customDescription: "" },
-  { title: "for NATAL", image: imgLembrar, movieToOpen: 'rebelde', customDescription: "" },
+  { 
+    title: "precisar de uma AMIGA", 
+    image: imgTriste, 
+    movieToOpen: 'harry', 
+    customDescription: "Espero que você saiba que não está sozinha independente do que seja ou do que vai acontecer você pode contar comigo e muitas outras pessoas. As vezes a vida parece que vira de cabeça pra baixo, mas confia em mim, elas sempre voltam ao eixo. Como espírita normalmente quando saímos da zona de conforto é que Deus esta mandando coisas melhores e isso é apenas uma preparação para a chegada dessa novidade. Então, respira e tenta descansar vendo um video de idiomas novos ou libras e me conta depois adoro como sempre descubro coisas novas com você." 
+  },
+  { 
+    title: "precisar de um alguém PARA OUVIR", 
+    image: imgRir, 
+    movieToOpen: 'scooby', 
+    customDescription: "Pare de ler imediatamente e me ligue caso eu esteja de plantão (se eu já tiver me formado até lá). Pode discar no número da Ana ou do Thomaz. Não surte sozinha — estamos aqui também para te ajudar nos momentos de crise. Você não precisa falar o que está passando. Entre no Discord e eu prometo que arrumo alguém para encher o seu saco e te divertir. (Se o Mayron ainda tiver paciência comigo, eu coloco ele na call e jogamos GTA — se ele não me matar toda hora.)" 
+  },
+  { 
+    title: "precisar de MOTIVAÇÃO", 
+    image: imgSaudade, 
+    movieToOpen: 'barbie', 
+    customDescription: "Nem todo dia teremos a melhor motivação do mundo, é normal. Mas se tiver que fazer algo que é importante e está sem coragem, levanta Maria Eduarda e se livra logo dessa bomba." 
+  },
+  { 
+    title: "tirar uma nota RUIM", 
+    image: imgCantar, 
+    movieToOpen: 'rebelde', 
+    customDescription: "As vezes passamos horas estudando e as notas não são boas, outras nem passamoa de 2horas e vem nota máxima. Existem muitos fatores para quee a nota tenha sido baixa, então não tente arrumar motivos ou ficar pensando muito, agora é só correr atrás. Achar novas maneiras de estudar e entender a matéria pode ser uma boa, ou até pode me explicar o conteúdo que debatemos e te ajudo nesse processo. Mas saiba que essa nota baixa nao defini você, por que você tem um valor imenso e é a pessoa mais capaz do mundo de passar na prova." 
+  },
+  { 
+    title: "precisar de um ABRAÇO", 
+    image: imgFeliz, 
+    movieToOpen: 'barbie', 
+    customDescription: "Não sei o que está acontecendo. Eu não sou de abraços (como sabemos), mas, se for preciso, estarei aqui para isso. Respire um pouco, pense que tudo passa — tanto as coisas boas quanto as ruins. Então lembre dos momentos bons para que os ruins sejam esquecidos. E, caso precise se distrair, vai lá e coloca bem alto na caixa o Now United, porque quero ouvir daqui o OH NANANA, que já sabemos de cor e salteado. Lembre-se, Branquela: hoje você nunca estará sozinha (não no sentido macabro, mas no da amizade mesmo KKKK)" 
+  },
+  { 
+    title: "se FORMAR", 
+    image: imgMedo, 
+    movieToOpen: 'scooby', 
+    customDescription: "Eu ainda não acredito que você está se formando, tipo a gente se formou juntas no ensino médio e agora você é graduada? Que mundo malucoo e maravilhoso. Agradeço a Deus por você está na minha vida e que possamos passar por mais etapas juntas. VIVA SEU DIA E AAAAA EDUARDA AGORA É ADMINISTRADORA!!!!!!!! Que seus sonhos realizem e espero que o mundo se prepare por que a maioral ta no mercado de trabalho administrativo." 
+  },
+  { 
+    title: "duvidar de si MESMA", 
+    image: imgInspiracao, 
+    movieToOpen: 'harry', 
+    customDescription: "Pare agora, nem deixe esse pensamento fluir. Impossível que o quer que seja você não consiga passar, não existe nada que eu sei que te impossibilite de algo (a não ser dindin pq não somos ricas, mas você entendeu). Você é a pessoa que sabe todas as bandeiras do mundo, aprende curiosidades de tantas coisas diferentes, sabe inglês como ninguém e ainda tem paciência para me traduzir. Então o mundo precisa de mais pessoas como você e pare de pensar que não é capaz branca sebosa." 
+  },
+  { 
+    title: "tiver com vontade DE CHORAR", 
+    image: imgDancar, 
+    movieToOpen: 'rebelde', 
+    customDescription: "Essa foi complicada de escrever por que não sei o motivo de você ter aberto essa carta. Então tentarei ser mais abrangente, mas chore...chore tudo que tiver que chorar, libere isso de dentro de você. Mas depois levante, lave o rosto, caso queira durma um pouco ou vai ver um pouco de Business Proposal, harry potter, big Bang theory ou qualquer outro video de culturas internacionais wue você ama. Curta o momento sozinha, mas caso queria companhia só me ligar que ficamos caladas juntas ou damos uma volta por ai." 
+  },
+  { 
+    title: "estiver DOENTE", 
+    image: imgNiver, 
+    movieToOpen: 'barbie', 
+    customDescription: "Ai temosa, vai tomar um remédio e se cuida. Que ainda tem muita coisa pra gebte viver." 
+  },
+  { 
+    title: "estiver tendo um DIA RUIM", 
+    image: imgTedio, 
+    movieToOpen: 'scooby', 
+    customDescription: "" 
+  },
+  { 
+    title: "estiver no ANO NOVO", 
+    image: imgConquista, 
+    movieToOpen: 'harry', 
+    customDescription: "Teoricamente você deve abrir isso no final ds 2025. Mas desejo isso em todos os anos da sua vida. Que você realize seus sonhos, que consiga ser uma pessoa melhor e mais saudável, que a felicidade continue em você. Essa pessoa maravilhosa que você é conseguir conquistar tudk que deseja, só não desitir e continue em volta de pessoas, que assim como eu, querem seu bem. FELIZ ANO NOVO VACAAAA" 
+  },
+  { 
+    title: "for NATAL", 
+    image: imgLembrar, 
+    movieToOpen: 'rebelde', 
+    customDescription: "Como explicar e falae sobre a melhor época do ano? Não tem sentimento igual. Espero que você tenha conseguido se controlar e aberto seu presente de natal na madrugada certa. Espero que tenha gostado e passado um natal maravilhoso. Vamos assitir Grinch por favor, o maioral dos filmes de natal. Um dia terei meu apê e farei nossa confra no estilo que o natal pede. Beijos e FELIZ NATALLLLLLLL" 
+  },
 ];
 
 // =========================================================================
