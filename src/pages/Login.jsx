@@ -82,21 +82,23 @@ const moviesData = {
     title: "Scooby-Doo!", 
     image: cardScooby, 
     year: "2002", 
-    description: "Já tivemos muitos momentos engraçados que nem caberiam em uma série nível Grey’s Anatomy. Porém, alguns momentos são bons demais para ficarem guardados.", 
+    // DESCRIÇÃO ATUALIZADA (OUVIR)
+    description: "Pare de ler imediatamente e me ligue caso eu esteja de plantão (se eu já tiver me formado até lá). Pode discar no número da Ana ou do Thomaz. Não surte sozinha — estamos aqui também para te ajudar nos momentos de crise. Você não precisa falar o que está passando. Entre no Discord e eu prometo que arrumo alguém para encher o seu saco e te divertir. (Se o Mayron ainda tiver paciência comigo, eu coloco ele na call e jogamos GTA — se ele não me matar toda hora.)", 
     cast: "Ana, Caio, Charles e Rurylumanael", 
     genre: "Comédia",
     scenesImages: [img29, img30, img31, img32, img33, img34],
-    subtitle: "O Túnel das Risadas",
+    subtitle: "Dificuldades e Superação",
   },
   barbie: { 
     title: "Barbie", 
     image: cardBarbie, 
     year: "2023", 
-    description: "Obrigada por todos os momentos juntos. Você sempre será a melhor amiga do mundo, mesmo sendo uma vaquinha. #AmoAnimais", 
+    // DESCRIÇÃO ATUALIZADA (ABRAÇO)
+    description: "Não sei o que está acontecendo. Eu não sou de abraços (como sabemos), mas, se for preciso, estarei aqui para isso. Respire um pouco, pense que tudo passa — tanto as coisas boas quanto as ruins. Então lembre dos momentos bons para que os ruins sejam esquecidos. E, caso precise se distrair, vai lá e coloca bem alto na caixa o Now United, porque quero ouvir daqui o OH NANANA, que já sabemos de cor e salteado. Lembre-se, Branquela: hoje você nunca estará sozinha (não no sentido macabro, mas no da amizade mesmo KKKK)", 
     cast: "Maria Eduarda e Nayara Anjos", 
     genre: "Comédia",
     scenesImages: [img35, img36, img37, img38, img39, img40],
-    subtitle: "A Vaca e O Panda",
+    subtitle: "Dificuldades e Superação",
   },
   rebelde: { 
     title: "Três Espiãs Demais", 
@@ -106,12 +108,11 @@ const moviesData = {
     cast: "Ana Grim, Maria Eduarda e Nayara Anjos", 
     genre: "Aventura", 
     scenesImages: [img41, img42, img43, img44, img45, img46],
-    subtitle: "Caminhos Trilhados",
+    subtitle: "Dificuldades e Superação",
   }
 };
 
 // --- CONFIGURAÇÃO DO "ABRA QUANDO..." ---
-// TÍTULOS ATUALIZADOS CONFORME A IMAGEM
 const openWhenList = [
   { title: "precisar de uma AMIGA", image: imgTriste, movieToOpen: 'harry' },
   { title: "precisar de um alguém PARA OUVIR", image: imgRir, movieToOpen: 'scooby' },
@@ -243,7 +244,7 @@ function Login() {
         </div>
         {/* --- FIM DA NOVA SEÇÃO --- */}
 
-        {/* SEÇÃO 2: ABRA QUANDO... (CLICÁVEL, TÍTULOS CORRIGIDOS) */}
+        {/* SEÇÃO 2: ABRA QUANDO... (TÍTULO DO MODAL CORRIGIDO) */}
         <div>
           <h3 className="text-2xl font-bold mb-6 text-white drop-shadow-lg pl-3 border-l-4 border-blue-500">Abra quando...</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -254,18 +255,16 @@ function Login() {
                     const baseMovieData = moviesData[item.movieToOpen] || moviesData.harry;
                     setSelectedMovie({
                         ...baseMovieData,
-                        image: item.image, // Garante que a imagem do modal é a imagem clicada
+                        // TÍTULO CORRIGIDO: Usa o título da emoção no TÍTULO PRINCIPAL do modal
+                        title: item.title, 
+                        image: item.image,
                     });
                 }} 
                 className="group relative w-full aspect-[433/243] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-blue-500"
               >
                 <img src={item.image} alt={item.title} className="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity" />
                 
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all flex items-center justify-center">
-                   <span className="text-white font-bold text-lg text-center px-4 drop-shadow-lg uppercase tracking-wide opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-transform">
-                     {item.title} {/* AGORA MOSTRA O TÍTULO DA EMOÇÃO */}
-                   </span>
-                </div>
+                {/* O texto já foi removido daqui para não sobrepor a imagem */}
               </div>
             ))}
           </div>
