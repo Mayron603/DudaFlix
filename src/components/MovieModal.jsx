@@ -11,7 +11,7 @@ export default function MovieModal({ isOpen, onClose, movie }) {
     if (e.target.id === "modal-overlay") onClose();
   };
 
-  // Verifica se existem cenas customizadas para o filme (como o Harry Potter)
+  // Verifica se existem cenas customizadas (para o bloco de cenas)
   const hasCustomScenes = movie.scenesImages && movie.scenesImages.length > 0;
 
   return (
@@ -65,8 +65,8 @@ export default function MovieModal({ isOpen, onClose, movie }) {
 
         {/* --- CORPO (Informações) --- */}
         <div className="px-10 py-4 grid grid-cols-3 gap-8">
-          {/* Coluna Esquerda (Info + Sinopse) */}
-          <div className="col-span-2 text-white">
+          {/* Coluna Esquerda (Info + Sinopse) - Usa col-span-3 se for card de Emoção */}
+          <div className={`text-white ${!movie.isEmotionalCard ? 'col-span-2' : 'col-span-3'}`}>
             <div className="flex items-center gap-3 mb-4 text-sm font-medium">
               <span className="text-green-400 font-bold">98% relevante</span>
               <span>{movie.year}</span>
@@ -74,48 +74,47 @@ export default function MovieModal({ isOpen, onClose, movie }) {
               <span className="bg-red-600 px-2 py-0.5 rounded text-xs font-bold">12+</span>
             </div>
             
-            <h3 className="text-xl font-bold mb-2">{movie.subtitle}</h3> {/* <--- AGORA USA O SUBTITLE */}
+            <h3 className="text-xl font-bold mb-2">{movie.subtitle}</h3> 
             <p className="text-gray-300 leading-relaxed text-sm">
               {movie.description}
             </p>
           </div>
 
-          {/* Coluna Direita (Elenco/Gênero) */}
-          <div className="text-sm text-gray-400 space-y-2">
-            <p><span className="text-gray-500">Elenco:</span> {movie.cast}</p>
-            <p><span className="text-gray-500">Gêneros:</span> {movie.genre}</p>
-            <p><span className="text-gray-500">Cenas:</span> Emocionantes, Divertidas</p>
-          </div>
+          {/* Coluna Direita (Elenco/Gênero) - ESCONDIDA se for card de Emoção */}
+          {!movie.isEmotionalCard && (
+            <div className="text-sm text-gray-400 space-y-2">
+              <p><span className="text-gray-500">Elenco:</span> {movie.cast}</p>
+              <p><span className="text-gray-500">Gêneros:</span> {movie.genre}</p>
+              <p><span className="text-gray-500">Cenas:</span> Emocionantes, Divertidas</p>
+            </div>
+          )}
         </div>
 
-        {/* --- LISTA DE EPISÓDIOS / CENAS --- */}
-        <div className="px-10 py-6 border-t border-gray-700">
-          
-          {hasCustomScenes ? (
-            <>
-              <h3 className="text-xl font-bold text-white mb-4">Cenas Especiais</h3>
-              
-              {/* LAYOUT GRID para Cenas Especiais */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4"> 
-                {movie.scenesImages.map((sceneImg, index) => (
-                  <div key={index} className="bg-[#2f2f2f] rounded-md overflow-hidden group cursor-pointer hover:bg-[#3f3f3f] transition">
-                      <div className="relative h-32 overflow-hidden"> 
-                          <img src={sceneImg} className="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" />
-                          {/* Apenas o título Episódio + número */}
-                          <div className="absolute bottom-2 left-2 text-white font-bold drop-shadow-md">Episódio {index + 1}</div>
-                          <Play className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity border-2 border-white rounded-full p-1" />
-                      </div>
-                      <div className="p-3">
-                          {/* REMOVIDO: A Jornada X e o 42 min */}
-                          <div className="flex justify-between items-center mb-1">
-                              <span className="text-white font-bold text-sm"></span> 
-                              <span className="text-gray-400 text-xs"></span>
-                          </div>
-                          {/* REMOVIDO: A breve descrição */}
-                          <p className="text-gray-400 text-xs line-clamp-2">
-                          </p>
-                      </div>
-                  </div>
+        {/* --- LISTA DE EPISÓDIOS / CENAS --- ESCONDIDA se for card de Emoção */}
+        {!movie.isEmotionalCard && (
+          <div className="px-10 py-6 border-t border-gray-700">
+            
+            {hasCustomScenes ? (
+              <>
+                <h3 className="text-xl font-bold text-white mb-4">Cenas Especiais</h3>
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4"> 
+                  {movie.scenesImages.map((sceneImg, index) => (
+                    <div key={index} className="bg-[#2f2f2f] rounded-md overflow-hidden group cursor-pointer hover:bg-[#3f3f3f] transition">
+                        <div className="relative h-32 overflow-hidden"> 
+                            <img src={sceneImg} className="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" />
+                            <div className="absolute bottom-2 left-2 text-white font-bold drop-shadow-md">Episódio {index + 1}</div>
+                            <Play className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity border-2 border-white rounded-full p-1" />
+                        </div>
+                        <div className="p-3">
+                            <div className="flex justify-between items-center mb-1">
+                                <span className="text-white font-bold text-sm"></span> 
+                                <span className="text-gray-400 text-xs"></span>
+                            </div>
+                            <p className="text-gray-400 text-xs line-clamp-2">
+                            </p>
+                        </div>
+                    </div>
                 ))}
               </div>
             </>
@@ -132,17 +131,14 @@ export default function MovieModal({ isOpen, onClose, movie }) {
                   <div key={item} className="bg-[#2f2f2f] rounded-md overflow-hidden group cursor-pointer hover:bg-[#3f3f3f] transition">
                     <div className="relative h-32 overflow-hidden">
                       <img src={movie.image} className="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" />
-                      {/* Apenas o título Episódio + número */}
                       <div className="absolute bottom-2 left-2 text-white font-bold drop-shadow-md">Episódio {item}</div>
                       <Play className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity border-2 border-white rounded-full p-1" />
                     </div>
                     <div className="p-3">
-                      {/* REMOVIDO: A Jornada X e o 42 min */}
                       <div className="flex justify-between items-center mb-1">
                          <span className="text-white font-bold text-sm"></span>
                          <span className="text-gray-400 text-xs"></span>
                       </div>
-                      {/* REMOVIDO: A breve descrição */}
                       <p className="text-gray-400 text-xs line-clamp-2">
                       </p>
                     </div>
@@ -151,10 +147,9 @@ export default function MovieModal({ isOpen, onClose, movie }) {
               </div>
             </>
           )}
-        </div>
-
+          </div>
+        )}
       </div>
-      
     </div>
   );
 }

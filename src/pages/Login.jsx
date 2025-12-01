@@ -82,22 +82,22 @@ const moviesData = {
     title: "Scooby-Doo!", 
     image: cardScooby, 
     year: "2002", 
-    // DESCRIÇÃO ATUALIZADA (OUVIR)
     description: "Pare de ler imediatamente e me ligue caso eu esteja de plantão (se eu já tiver me formado até lá). Pode discar no número da Ana ou do Thomaz. Não surte sozinha — estamos aqui também para te ajudar nos momentos de crise. Você não precisa falar o que está passando. Entre no Discord e eu prometo que arrumo alguém para encher o seu saco e te divertir. (Se o Mayron ainda tiver paciência comigo, eu coloco ele na call e jogamos GTA — se ele não me matar toda hora.)", 
     cast: "Ana, Caio, Charles e Rurylumanael", 
     genre: "Comédia",
     scenesImages: [img29, img30, img31, img32, img33, img34],
+    // SUBTÍTULO DEFINIDO
     subtitle: "O Túnel das Risadas",
   },
   barbie: { 
     title: "Barbie", 
     image: cardBarbie, 
     year: "2023", 
-    // DESCRIÇÃO ATUALIZADA (ABRAÇO)
     description: "Não sei o que está acontecendo. Eu não sou de abraços (como sabemos), mas, se for preciso, estarei aqui para isso. Respire um pouco, pense que tudo passa — tanto as coisas boas quanto as ruins. Então lembre dos momentos bons para que os ruins sejam esquecidos. E, caso precise se distrair, vai lá e coloca bem alto na caixa o Now United, porque quero ouvir daqui o OH NANANA, que já sabemos de cor e salteado. Lembre-se, Branquela: hoje você nunca estará sozinha (não no sentido macabro, mas no da amizade mesmo KKKK)", 
     cast: "Maria Eduarda e Nayara Anjos", 
     genre: "Comédia",
     scenesImages: [img35, img36, img37, img38, img39, img40],
+    // SUBTÍTULO DEFINIDO
     subtitle: "A Vaca e O Panda",
   },
   rebelde: { 
@@ -108,6 +108,7 @@ const moviesData = {
     cast: "Ana Grim, Maria Eduarda e Nayara Anjos", 
     genre: "Aventura", 
     scenesImages: [img41, img42, img43, img44, img45, img46],
+    // SUBTÍTULO DEFINIDO
     subtitle: "Caminhos Trilhados",
   }
 };
@@ -258,6 +259,7 @@ function Login() {
                         // TÍTULO CORRIGIDO: Usa o título da emoção no TÍTULO PRINCIPAL do modal
                         title: item.title, 
                         image: item.image,
+                        isEmotionalCard: true, // SINALIZADOR ADICIONADO AQUI
                     });
                 }} 
                 className="group relative w-full aspect-[433/243] bg-[#1f1f1f] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-blue-500"
