@@ -306,10 +306,7 @@ function Login() {
                 className="group relative w-full aspect-[16/9] bg-[#1f1f1f] rounded md:rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:z-30 hover:shadow-2xl hover:ring-2 hover:ring-blue-500"
               >
                 <img src={item.image} alt={item.title} className="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity" />
-                {/* Título sobre a imagem no card pequeno */}
-                <div className="absolute inset-0 bg-black/30 flex items-end p-2 md:p-3">
-                    <p className="text-white text-xs md:text-sm font-bold drop-shadow-md leading-tight uppercase tracking-wider">{item.title}</p>
-                </div>
+                {/* REMOVIDO: O texto sobre a imagem foi apagado aqui */}
               </div>
             ))}
           </div>
