@@ -86,7 +86,7 @@ const moviesData = {
     cast: "Ana, Caio, Charles e Rurylumanael", 
     genre: "Comédia",
     scenesImages: [img29, img30, img31, img32, img33, img34],
-    subtitle: "Dificuldades e Superação",
+    subtitle: "O Túnel das Risadas",
   },
   barbie: { 
     title: "Barbie", 
@@ -96,7 +96,7 @@ const moviesData = {
     cast: "Maria Eduarda e Nayara Anjos", 
     genre: "Comédia",
     scenesImages: [img35, img36, img37, img38, img39, img40],
-    subtitle: "Dificuldades e Superação",
+    subtitle: "A Vaca e O Panda",
   },
   rebelde: { 
     title: "Três Espiãs Demais", 
@@ -106,7 +106,7 @@ const moviesData = {
     cast: "Ana Grim, Maria Eduarda e Nayara Anjos", 
     genre: "Aventura", 
     scenesImages: [img41, img42, img43, img44, img45, img46],
-    subtitle: "Dificuldades e Superação",
+    subtitle: "Caminhos Trilhados",
   }
 };
 
