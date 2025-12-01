@@ -95,22 +95,24 @@ export default function MovieModal({ isOpen, onClose, movie }) {
             <>
               <h3 className="text-xl font-bold text-white mb-4">Cenas Especiais</h3>
               
-              {/* NOVO LAYOUT: Grid 2x3 com as fotos customizadas */}
+              {/* LAYOUT GRID para Cenas Especiais */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4"> 
                 {movie.scenesImages.map((sceneImg, index) => (
                   <div key={index} className="bg-[#2f2f2f] rounded-md overflow-hidden group cursor-pointer hover:bg-[#3f3f3f] transition">
                       <div className="relative h-32 overflow-hidden"> 
                           <img src={sceneImg} className="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" />
+                          {/* Apenas o título Episódio + número */}
                           <div className="absolute bottom-2 left-2 text-white font-bold drop-shadow-md">Episódio {index + 1}</div>
                           <Play className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity border-2 border-white rounded-full p-1" />
                       </div>
                       <div className="p-3">
+                          {/* REMOVIDO: A Jornada X e o 42 min */}
                           <div className="flex justify-between items-center mb-1">
-                              <span className="text-white font-bold text-sm">A Jornada {index + 1}</span>
-                              <span className="text-gray-400 text-xs">42 min</span>
+                              <span className="text-white font-bold text-sm"></span> 
+                              <span className="text-gray-400 text-xs"></span>
                           </div>
+                          {/* REMOVIDO: A breve descrição */}
                           <p className="text-gray-400 text-xs line-clamp-2">
-                              Uma breve descrição sobre o que acontece neste momento emocionante da história.
                           </p>
                       </div>
                   </div>
@@ -130,16 +132,18 @@ export default function MovieModal({ isOpen, onClose, movie }) {
                   <div key={item} className="bg-[#2f2f2f] rounded-md overflow-hidden group cursor-pointer hover:bg-[#3f3f3f] transition">
                     <div className="relative h-32 overflow-hidden">
                       <img src={movie.image} className="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" />
+                      {/* Apenas o título Episódio + número */}
                       <div className="absolute bottom-2 left-2 text-white font-bold drop-shadow-md">Episódio {item}</div>
                       <Play className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity border-2 border-white rounded-full p-1" />
                     </div>
                     <div className="p-3">
+                      {/* REMOVIDO: A Jornada X e o 42 min */}
                       <div className="flex justify-between items-center mb-1">
-                         <span className="text-white font-bold text-sm">A Jornada {item}</span>
-                         <span className="text-gray-400 text-xs">42 min</span>
+                         <span className="text-white font-bold text-sm"></span>
+                         <span className="text-gray-400 text-xs"></span>
                       </div>
+                      {/* REMOVIDO: A breve descrição */}
                       <p className="text-gray-400 text-xs line-clamp-2">
-                         Uma breve descrição sobre o que acontece neste momento emocionante da história.
                       </p>
                     </div>
                   </div>
@@ -150,6 +154,7 @@ export default function MovieModal({ isOpen, onClose, movie }) {
         </div>
 
       </div>
+      
     </div>
   );
 }
