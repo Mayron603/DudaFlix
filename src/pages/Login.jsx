@@ -10,6 +10,7 @@ import bgHero from '../assets/fotofundo.png';
 import cardHarry from '../assets/2.png';
 import cardScooby from '../assets/3.png';
 import cardBarbie from '../assets/4.png';
+// NOTE: cardRebelde will now represent the TRES ESPIASSSSS content
 import cardRebelde from '../assets/5.png';
 
 // Imagens da NOVA SEÇÃO (18 a 22)
@@ -19,13 +20,38 @@ import img20 from '../assets/20.png';
 import img21 from '../assets/21.png';
 import img22 from '../assets/22.png';
 
-// Imagens para as Cenas do Modal (23 a 28)
+// Imagens para as Cenas do Modal (23 a 28) - Harry Potter
 import img23 from '../assets/23.png';
 import img24 from '../assets/24.png';
 import img25 from '../assets/25.png';
 import img26 from '../assets/26.png';
 import img27 from '../assets/27.png';
 import img28 from '../assets/28.png';
+
+// NOVAS IMAGENS PARA O SCOOBY-DOO (29 a 34)
+import img29 from '../assets/29.png';
+import img30 from '../assets/30.png';
+import img31 from '../assets/31.png';
+import img32 from '../assets/32.png';
+import img33 from '../assets/33.png';
+import img34 from '../assets/34.png';
+
+// NOVAS IMAGENS PARA A BARBIE (35 a 40)
+import img35 from '../assets/35.png';
+import img36 from '../assets/36.png';
+import img37 from '../assets/37.png';
+import img38 from '../assets/38.png';
+import img39 from '../assets/39.png';
+import img40 from '../assets/40.png';
+
+// NOVAS IMAGENS PARA TRES ESPIASSSSS (41 a 46)
+import img41 from '../assets/41.png';
+import img42 from '../assets/42.png';
+import img43 from '../assets/43.png';
+import img44 from '../assets/44.png';
+import img45 from '../assets/45.png';
+import img46 from '../assets/46.png';
+
 
 // Imagens do "Abra quando..."
 import imgTriste from '../assets/6.png';
@@ -47,16 +73,41 @@ const moviesData = {
     title: "Harry Potter", 
     image: cardHarry, 
     year: "2001", 
-    // DESCRIÇÃO, ELENCO E GÊNERO EDITADOS:
     description: "Um grupo que começou do nada e juntou tantas histórias até aqui. Mesmo que Thomaz trai a gente com outra mulher de vestido, ainda seremos o elenco principal das anarquias — e dos momentos sérios também. Nós te amamos, Branca Sebosa.", 
     cast: "Ana Grimm, Maria Eduarda, Nayara Anjos e Thomaz Vinicius", 
     genre: "3 mulheres e 1 homem afeminado",
-    // NOVO ARRAY DE IMAGENS PARA CENA/EPISÓDIOS DO MODAL:
     scenesImages: [img23, img24, img25, img26, img27, img28],
   },
-  scooby: { title: "Scooby-Doo!", image: cardScooby, year: "2002", description: "A Mistério S/A se reúne...", cast: "Freddie Prinze Jr.", genre: "Comédia" },
-  barbie: { title: "Barbie", image: cardBarbie, year: "2023", description: "Viver na Barbielândia...", cast: "Margot Robbie", genre: "Comédia" },
-  rebelde: { title: "Rebelde", image: cardRebelde, year: "2004", description: "Em um colégio de elite...", cast: "Anahí", genre: "Musical" }
+  scooby: { 
+    title: "Scooby-Doo!", 
+    image: cardScooby, 
+    year: "2002", 
+    description: "Já tivemos muitos momentos engraçados que nem caberiam em uma série nível Grey’s Anatomy. Porém, alguns momentos são bons demais para ficarem guardados.", 
+    cast: "Ana, Caio, Charles e Rurylumanael", 
+    genre: "Comédia",
+    scenesImages: [img29, img30, img31, img32, img33, img34],
+  },
+  barbie: { 
+    title: "Barbie", 
+    image: cardBarbie, 
+    year: "2023", 
+    description: "Obrigada por todos os momentos juntos. Você sempre será a melhor amiga do mundo, mesmo sendo uma vaquinha. #AmoAnimais", 
+    cast: "Maria Eduarda e Nayara Anjos", 
+    genre: "Comédia",
+    scenesImages: [img35, img36, img37, img38, img39, img40],
+  },
+  rebelde: { 
+    // RENOMEADO para refletir o conteúdo das Três Espiãs
+    title: "Três Espiãs Demais", 
+    image: cardRebelde, // Mantém a imagem original, mas agora representa o novo filme
+    year: "2004", 
+    // DESCRIÇÃO E ELENCO NOVOS:
+    description: "Um trio que já passou por altos e baixos, com muitas linhas tortas que nos fizeram chegar até aqui de maneiras confusas — e que sempre seria assim pelo destino.", 
+    cast: "Ana Grim, Maria Eduarda e Nayara Anjos", 
+    genre: "Aventura", // Gênero alterado para combinar com o tema
+    // NOVO ARRAY DE IMAGENS PARA CENAS:
+    scenesImages: [img41, img42, img43, img44, img45, img46],
+  }
 };
 
 // --- CONFIGURAÇÃO DO "ABRA QUANDO..." ---
@@ -64,7 +115,7 @@ const openWhenList = [
   { title: "", image: imgTriste, movieToOpen: 'harry' },
   { title: "", image: imgRir, movieToOpen: 'scooby' },
   { title: "", image: imgSaudade, movieToOpen: 'barbie' },
-  { title: "", image: imgCantar, movieToOpen: 'rebelde' },
+  { title: "", image: imgCantar, movieToOpen: 'rebelde' }, // Aponta para a nova entrada 'rebelde' (Três Espiãs)
   
   { title: "", image: imgFeliz, movieToOpen: 'barbie' },
   { title: "", image: imgMedo, movieToOpen: 'scooby' },
@@ -191,7 +242,7 @@ function Login() {
         </div>
         {/* --- FIM DA NOVA SEÇÃO --- */}
 
-        {/* SEÇÃO 2: ABRA QUANDO... (CORRIGIDO PARA MOSTRAR A IMAGEM DO CARD NO MODAL) */}
+        {/* SEÇÃO 2: ABRA QUANDO... (CLICÁVEL NOVAMENTE) */}
         <div>
           <h3 className="text-2xl font-bold mb-6 text-white drop-shadow-lg pl-3 border-l-4 border-blue-500">Abra quando...</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
