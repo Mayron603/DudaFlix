@@ -74,7 +74,7 @@ export default function MovieModal({ isOpen, onClose, movie }) {
               <span className="bg-red-600 px-2 py-0.5 rounded text-xs font-bold">12+</span>
             </div>
             
-            <h3 className="text-xl font-bold mb-2">Dificuldades e Superação</h3>
+            <h3 className="text-xl font-bold mb-2">{movie.subtitle}</h3> {/* <--- AGORA USA O SUBTITLE */}
             <p className="text-gray-300 leading-relaxed text-sm">
               {movie.description}
             </p>

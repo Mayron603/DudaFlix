@@ -10,7 +10,6 @@ import bgHero from '../assets/fotofundo.png';
 import cardHarry from '../assets/2.png';
 import cardScooby from '../assets/3.png';
 import cardBarbie from '../assets/4.png';
-// NOTE: cardRebelde will now represent the TRES ESPIASSSSS content
 import cardRebelde from '../assets/5.png';
 
 // Imagens da NOVA SEÇÃO (18 a 22)
@@ -77,6 +76,8 @@ const moviesData = {
     cast: "Ana Grimm, Maria Eduarda, Nayara Anjos e Thomaz Vinicius", 
     genre: "3 mulheres e 1 homem afeminado",
     scenesImages: [img23, img24, img25, img26, img27, img28],
+    // SUBTÍTULO ATUALIZADO
+    subtitle: "3 mulheres e 1 homem afeminado", 
   },
   scooby: { 
     title: "Scooby-Doo!", 
@@ -86,6 +87,8 @@ const moviesData = {
     cast: "Ana, Caio, Charles e Rurylumanael", 
     genre: "Comédia",
     scenesImages: [img29, img30, img31, img32, img33, img34],
+    // SUBTÍTULO PADRÃO
+    subtitle: "Dificuldades e Superação",
   },
   barbie: { 
     title: "Barbie", 
@@ -95,18 +98,19 @@ const moviesData = {
     cast: "Maria Eduarda e Nayara Anjos", 
     genre: "Comédia",
     scenesImages: [img35, img36, img37, img38, img39, img40],
+    // SUBTÍTULO PADRÃO
+    subtitle: "Dificuldades e Superação",
   },
   rebelde: { 
-    // RENOMEADO para refletir o conteúdo das Três Espiãs
     title: "Três Espiãs Demais", 
-    image: cardRebelde, // Mantém a imagem original, mas agora representa o novo filme
+    image: cardRebelde, 
     year: "2004", 
-    // DESCRIÇÃO E ELENCO NOVOS:
     description: "Um trio que já passou por altos e baixos, com muitas linhas tortas que nos fizeram chegar até aqui de maneiras confusas — e que sempre seria assim pelo destino.", 
     cast: "Ana Grim, Maria Eduarda e Nayara Anjos", 
-    genre: "Aventura", // Gênero alterado para combinar com o tema
-    // NOVO ARRAY DE IMAGENS PARA CENAS:
+    genre: "Aventura", 
     scenesImages: [img41, img42, img43, img44, img45, img46],
+    // SUBTÍTULO PADRÃO
+    subtitle: "Dificuldades e Superação",
   }
 };
 
@@ -115,7 +119,7 @@ const openWhenList = [
   { title: "", image: imgTriste, movieToOpen: 'harry' },
   { title: "", image: imgRir, movieToOpen: 'scooby' },
   { title: "", image: imgSaudade, movieToOpen: 'barbie' },
-  { title: "", image: imgCantar, movieToOpen: 'rebelde' }, // Aponta para a nova entrada 'rebelde' (Três Espiãs)
+  { title: "", image: imgCantar, movieToOpen: 'rebelde' }, 
   
   { title: "", image: imgFeliz, movieToOpen: 'barbie' },
   { title: "", image: imgMedo, movieToOpen: 'scooby' },
